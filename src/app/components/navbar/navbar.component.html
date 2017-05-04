@@ -1,0 +1,14 @@
+<md-toolbar color="primary">
+    <div class="authorization"> 
+        <div *ngIf = "loggedIn()" class="button-row">
+            <button class="md-button">
+                Hello, {{ username }}
+            </button>
+        </div>
+        <div class="button-row">
+            <button *ngIf="!loggedIn()" md-button (click)="openRegisterDialog()">Register</button>
+            <button *ngIf="!username" md-button (click)="openLoginDialog()">Log In</button>
+            <button *ngIf="username" md-button (click)="logout()">Log Out</button>
+        </div>
+    </div>
+</md-toolbar>
